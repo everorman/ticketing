@@ -1,18 +1,20 @@
 apiVersion: skaffold/v2alpha3
 kind: Config
-deploy: 
+deploy:
   kubectl:
-    manifests: 
+    manifests:
       - ./infra/k8s/*
-build: 
-  local: 
-    push: false
-  artifacts: 
-    - image: everorman/auth
+build:
+  # local:
+  #   push: false
+  googleCloudBuild:
+    projectId: orbital-concord-382819
+  artifacts:
+    - image: us.gcr.io/orbital-concord-382819/auth
       context: auth
-      docker: 
+      docker:
         dockerfile: Dockerfile
-      sync: 
-        manual: 
+      sync:
+        manual:
           - src: 'src/**/*.ts'
             dest: .

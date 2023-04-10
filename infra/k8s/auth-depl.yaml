@@ -1,32 +1,30 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata: 
+metadata:
   name: auth-depl
-spec: 
+spec:
   replicas: 1
-  selector: 
-    matchLabels: 
+  selector:
+    matchLabels:
       app: auth
-  template: 
-    metadata: 
-      labels: 
+  template:
+    metadata:
+      labels:
         app: auth
-    spec: 
+    spec:
       containers:
         - name: auth
-          image: everorman/auth
+          image: us.gcr.io/orbital-concord-382819/auth
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: auth-srv
-spec: 
-  selector: 
+spec:
+  selector:
     app: auth
   ports:
     - name: auth
       protocol: TCP
       port: 3000
       targetPort: 3000
-  
-    
