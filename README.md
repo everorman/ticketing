@@ -1,5 +1,12 @@
 # Ticketing - Udemy microservice practice
 
+##### Library used
+
+| Library              | url                                                | description                                               |
+| -------------------- | -------------------------------------------------- | --------------------------------------------------------- |
+| express-validator    | https://express-validator.github.io/docs/          | Middlewares that wraps validator and sanitizer functions. |
+| express-async-errors | https://www.npmjs.com/package/express-async-errors | A simple way to throw async error                         |
+
 ##### Google cloud connect
 
 https://cloud.google.com/sdk/docs/install-sdk?hl=es-419
