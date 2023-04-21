@@ -7,7 +7,7 @@ import { currentUserRouter } from './router/current-user';
 import { signinRouter } from './router/singin';
 import { signoutRouter } from './router/singout';
 import { signupRouter } from './router/singup';
-import { errorHandler } from './moddlewares/error-handler';
+import { errorHandler } from './middlewares/error-handler';
 import { NotFoundError } from './errors/not-found-error';
 
 const app = express();
