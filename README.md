@@ -6,6 +6,8 @@
 | -------------------- | -------------------------------------------------- | --------------------------------------------------------- |
 | express-validator    | https://express-validator.github.io/docs/          | Middlewares that wraps validator and sanitizer functions. |
 | express-async-errors | https://www.npmjs.com/package/express-async-errors | A simple way to throw async error                         |
+| cookies-session      | https://www.npmjs.com/package/cookie-session       | Simple cookie-based session middleware.                   |
+| jsonwebtoken         | https://www.npmjs.com/package/jsonwebtoken         | Implementation of LWT                                     |
 
 ##### Google cloud connect
 
@@ -50,3 +52,9 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/cont
 ```
 
 When you setup nginx in gcloud it configs a load balancer automatically, you can check this in Networks services and see inside of load balancer
+
+Instaling cookies-session:
+
+```
+npm i cookie-session @types/cookie-session
+```
