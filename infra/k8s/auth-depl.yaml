@@ -15,6 +15,12 @@ spec:
       containers:
         - name: auth
           image: everorman/auth
+          env: 
+            - name: JWT_KEY # this name made reference to the var inside of our pod
+              valueFrom:
+                secretKeyRef:
+                  name: jwt-secret # Secret name, you can see the name with kubectl get secrets 
+                  key: JWT_KEY # Key pair inside of the secret 
 ---
 apiVersion: v1
 kind: Service

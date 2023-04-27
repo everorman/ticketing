@@ -58,3 +58,9 @@ Instaling cookies-session:
 ```
 npm i cookie-session @types/cookie-session
 ```
+
+#### Creating secrets
+
+For create a secreet exist a type of pod that are going to have all our secrets and the rest of the pods can access to that secrets as an env variable
+
+`kubectl create secret generic jwt-secret --from-literal=JWT_KEY=asdf`
