@@ -5,9 +5,9 @@ import mongoose from 'mongoose';
 import cookieSession from 'cookie-session';
 
 import { currentUserRouter } from './router/current-user';
-import { signinRouter } from './router/singin';
-import { signoutRouter } from './router/singout';
-import { signupRouter } from './router/singup';
+import { signinRouter } from './router/signin';
+import { signoutRouter } from './router/signout';
+import { signupRouter } from './router/signup';
 import { errorHandler } from './middlewares/error-handler';
 import { NotFoundError } from './errors/not-found-error';
 
