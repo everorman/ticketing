@@ -7,12 +7,10 @@ it('responds with details about the current user', async () => {
         password: 'demo123',
     };
 
-    const singOutResponse = await request(app)
-        .post('/api/users/signup')
-        .send(mockUser)
-        .expect(201);
-
-    const cookie = singOutResponse.get('Set-Cookie');
+    const cookie = await global.signin(
+        mockUser.email,
+        mockUser.password
+    );
 
     const response = await request(app)
         .get('/api/users/currentUser')
