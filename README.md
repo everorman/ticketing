@@ -5,7 +5,7 @@
 | Library              | url                                                | description                                               |
 | -------------------- | -------------------------------------------------- | --------------------------------------------------------- |
 | express-validator    | https://express-validator.github.io/docs/          | Middlewares that wraps validator and sanitizer functions. |
-| express-async-errors | https://www.npmjs.com/package/express-async-errors | A simple way to throw async error                         |
+| express-async-errors | https://www.npmjs.com/package/express-async-errors | A simple way to throw async error                        |
 | cookies-session      | https://www.npmjs.com/package/cookie-session       | Simple cookie-based session middleware.                   |
 | jsonwebtoken         | https://www.npmjs.com/package/jsonwebtoken         | Implementation of LWT                                     |
 
@@ -64,3 +64,14 @@ npm i cookie-session @types/cookie-session
 For create a secreet exist a type of pod that are going to have all our secrets and the rest of the pods can access to that secrets as an env variable
 
 `kubectl create secret generic jwt-secret --from-literal=JWT_KEY=asdf`
+
+
+Runing test 
+
+> Error:  Instance failed to start because a library is missing or cannot be opened: "libcrypto.so.1.1" MongoMemoryServer
+
+```python
+$ echo "deb http://security.ubuntu.com/ubuntu focal-security main" | sudo tee /etc/apt/sources.list.d/focal-security.list
+$ apt-get update && \
+    apt-get install libssl1.1
+```
