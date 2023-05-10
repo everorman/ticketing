@@ -1,18 +1,26 @@
 apiVersion: skaffold/v2alpha3
 kind: Config
-deploy: 
+deploy:
   kubectl:
-    manifests: 
+    manifests:
       - ./infra/k8s/*
-build: 
-  local: 
+build:
+  local:
     push: false
-  artifacts: 
+  artifacts:
     - image: everorman/auth
       context: auth
-      docker: 
+      docker:
         dockerfile: Dockerfile
-      sync: 
-        manual: 
-          - src: 'src/**/*.ts'
+      sync:
+        manual:
+          - src: "src/**/*.ts"
+            dest: .
+    - image: everorman/ticketing-client
+      context: client
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: "**/*.js"
             dest: .
